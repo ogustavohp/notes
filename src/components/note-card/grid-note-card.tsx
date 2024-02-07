@@ -1,5 +1,5 @@
 import { NewNoteCard } from './new-note-card'
-import { NoteCard } from './note-cards'
+import { NoteCard } from './note-card'
 
 export function GridNoteCard() {
   return (
