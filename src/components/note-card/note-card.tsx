@@ -4,11 +4,13 @@ import { ptBR } from 'date-fns/locale'
 import { X } from 'lucide-react'
 
 interface NoteCardProps {
+  id: string
   date: Date
   content: string
+  onNoteDeleted: (id: string) => void
 }
 
-export function NoteCard({ date, content }: NoteCardProps) {
+export function NoteCard({ id, date, content, onNoteDeleted }: NoteCardProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger className="relative flex flex-col gap-3 overflow-hidden rounded-md bg-slate-800 p-5 text-left outline-none hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400">
@@ -37,6 +39,7 @@ export function NoteCard({ date, content }: NoteCardProps) {
 
             <button
               type="button"
+              onClick={() => onNoteDeleted(id)}
               className="group w-full bg-slate-800 py-4 text-center text-sm font-medium text-slate-300"
             >
               Deseja{' '}
